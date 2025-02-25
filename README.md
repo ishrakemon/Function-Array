@@ -1,2 +1,11 @@
 # Function-Array
-This is my first Git Repository.
+This project contains various operations on arrays, including:
+
+- Taking input from the user
+- Displaying the array elements
+- Sorting the array in ascending order
+- Sorting the array in descending order
+
+## Author
+
+**Ishrakuzzaman Emon**
