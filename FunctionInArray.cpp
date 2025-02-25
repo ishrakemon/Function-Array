@@ -4,6 +4,8 @@
 void TakingInputElement(double Array[], int Size);
 // Function prototype for showing array output
 void ShowingOutputElement(double Array[], int Size);
+// Function prototype for sorting array output
+void SortArrayInAscending(double Array[], int Size);
 
 int main()
 {
@@ -19,6 +21,12 @@ int main()
 
     std::cout << "\nArray: ";
     ShowingOutputElement(array, size); // Function call to show array output
+    std::cout << std::endl;
+
+    SortArrayInAscending(array, size); // Function to sort array elements
+
+    std::cout << "Array in Ascending Order: ";
+    ShowingOutputElement(array, size); // Display sorted array
     std::cout << std::endl;
 
     delete[] array; // Deallocate dynamically allocated memory
@@ -43,3 +51,22 @@ void ShowingOutputElement(double Array[], int Size)
         std::cout << Array[i] << " ";
     }
 }
+
+// Function to sort array elements in ascending order
+void SortArrayInAscending(double Array[], int Size)
+{
+    for (int i = 0; i < Size - 1; i++)
+    {
+        for (int j = 0; j < Size - i - 1; j++) // Optimized inner loop
+        {
+            if (Array[j] > Array[j + 1])
+            {
+                double temp = Array[j];
+                Array[j] = Array[j + 1];
+                Array[j + 1] = temp;
+            }
+        }
+    }
+}
+
+//This code is written by Emon
