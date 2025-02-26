@@ -8,6 +8,8 @@ void ShowingOutputElement(double Array[], int Size);
 void SortArrayInAscending(double Array[], int Size);
 // Function prototype for sorting array output in descending
 void SortArrayInDescending(double Array[], int Size);
+// Function prototype for counting total number of negative elements
+int CountingNumOfNegativeValue(double Array[], int Size);
 
 int main()
 {
@@ -23,7 +25,21 @@ int main()
 
     std::cout << "\nArray: ";
     ShowingOutputElement(array, size); // Function call to show array output
+    std::cout << "\n---------------------------------------------" << std::endl;
     std::cout << std::endl;
+
+
+    int countNegative = CountingNumOfNegativeValue (array, size); // Function call to count total of negative element
+
+    std::cout<< "Count of Negative Elements in the Array: ";
+    if(countNegative<=0)
+    {
+        std::cout << "N/A" << std::endl;
+    }
+    else
+    {
+        std::cout<< countNegative << std::endl;
+    }
 
     SortArrayInAscending(array, size); // Function to sort array elements in ascending
 
@@ -60,6 +76,20 @@ void ShowingOutputElement(double Array[], int Size)
     }
 }
 
+// Function to find total number of negative value
+int CountingNumOfNegativeValue(double Array[], int Size)
+{
+    int count = 0;
+    for (int i = 0; i < Size; i++)
+    {
+        if(Array[i]<0)
+        {
+            count++; // Increment by one when value is negative
+        }
+    }
+    return count;
+}
+
 // Function to sort array elements in ascending order
 void SortArrayInAscending(double Array[], int Size)
 {
@@ -93,5 +123,4 @@ void SortArrayInDescending(double Array[], int Size)
         }
     }
 }
-
-//push test in git hub
+//code by Emon
